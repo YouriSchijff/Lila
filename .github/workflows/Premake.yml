@@ -10,10 +10,15 @@ jobs:
   static-tests:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+        
       - name: Spell Check
         uses: codespell-project/actions-codespell@v2
         with:
           skip: ./bin,*.txt,*.yml.*.json,*.toml,*.ini,*.xml
+          check_filenames: true
 
   build-linux:
     runs-on: ubuntu-latest
