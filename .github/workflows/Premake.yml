@@ -64,10 +64,9 @@ jobs:
     needs: build-linux
     steps:
       - name: Getting state
-        uses: actions/upload-artifact@master
+        uses: actions/download-artifact@v4
         with:
           name: Lila-binary
-          path: .
       
       - name: Run
         run: bin/linux-x86_64/Headless/Testbed/Testbed
