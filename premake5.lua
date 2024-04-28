@@ -1,10 +1,5 @@
 include "deps/Dependencies.lua"
 
-newoption {
-   trigger = "headless",
-   description = "Removes every rendering component"
-}
-
 workspace "Lila"
     linkgroups "On"
     warnings "Off"
@@ -12,7 +7,7 @@ workspace "Lila"
     architecture "x64"
     startproject "Testbed"
 
-    configurations { "Debug", "Release" }
+    configurations { "Debug", "Release", "Headless" }
     
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
