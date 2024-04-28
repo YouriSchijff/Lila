@@ -16,13 +16,13 @@ jobs:
       with:
         submodules: 'recursive'
 
-    - name: Download Premake
-      uses: BEASTSM96/premake-action@v1.3.1
-
-    - name: Setup X11
+    - name: Downloading X11
       run: sudo apt install xorg-dev
 
-    - name: premake
+    - name: Downloading Premake
+      uses: BEASTSM96/premake-action@v1.3.1
+
+    - name: Using Premake
       run: premake5 gmake2
     
     - name: Build using Make
@@ -43,14 +43,10 @@ jobs:
     - name: Configure MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
       
-    - name: Restore NuGet packages
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget restore .
-      
-    - name: Download Premake
+    - name: Downloading Premake
       uses: BEASTSM96/premake-action@v1.3.1
 
-    - name: premake
+    - name: Using Premake
       run: premake5 vs2022
     
     - name: Build using MSBuild
