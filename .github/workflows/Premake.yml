@@ -23,7 +23,7 @@ jobs:
       run: sudo apt install xorg-dev
 
     - name: premake
-      run: premake5 gmake2
+      run: premake5 gmake2 --headless
     
     - name: make
       run: make
