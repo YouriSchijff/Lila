@@ -11,18 +11,8 @@ workspace "Lila"
     
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
-group "Dependencies"
-    include "deps/glad"
-group ""
 
-group "GLFW"
-    include "deps/glfw"
-group ""
-
-group "Lila engine"
-    include "Lila/build.lua"
-group ""
-
-group "Testing"
-    include "testbed/build.lua"
-group ""
+include "deps/glad"
+include "deps/glfw"
+include "Lila/build.lua"
+include "testbed/build.lua"
