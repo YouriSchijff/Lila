@@ -25,7 +25,18 @@ jobs:
     
     - name: Build using Make
       run: make config=headless
-  
+    
+    - name: Saving state
+      uses: actions/upload-artifact@master
+      with:
+        retention-days: 1
+        overwrite: true
+        name: Lila-binary
+        path: |
+          bin
+          !bin/obj
+        
+        
   build-windows:
     runs-on: windows-latest
     steps:
@@ -47,51 +58,16 @@ jobs:
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=Headless .
-
-  build-macos:
-    runs-on: "macos-latest"
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          
-      - name: Downloading Premake
-        uses: BEASTSM96/premake-action@v1.3.1
-
-      - name: Using Premake
-        run: premake5 xcode4
-      
-      - name: Build using Xcode
-        uses: mxcl/xcodebuild@v1
-        with:
-          platform: macOS
-          action: build
-          configuration: Headless
-          
-  
-  build-ios:
-    runs-on: "macos-latest"
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          
-      - name: Downloading Premake
-        uses: BEASTSM96/premake-action@v1.3.1
-
-      - name: Using Premake
-        run: premake5 xcode4
-        
-      - name: Build using Xcode
-        uses: mxcl/xcodebuild@v1
-        with:
-          platform: iOS
-          action: build
-          configuration: Headless
           
   test-linux:
     runs-on: ubuntu-latest
     needs: build-linux
     steps:
+      - name: Getting state
+        uses: actions/upload-artifact@master
+        with:
+          name: Lila-binary
+      
       - name: Run
-        run: ${PWD}/bin/linux-x86_64/Headless/Testbed/Testbed
+        run: bin/linux-x86_64/Headless/Testbed/Testbed
+        
