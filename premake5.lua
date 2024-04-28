@@ -18,5 +18,8 @@ group ""
 
 group "Lila engine"
     include "Lila/build.lua"
+group ""
+
+group "Testing"
     include "testbed/build.lua"
 group ""
