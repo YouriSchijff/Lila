@@ -1,0 +1,18 @@
+name: Building
+
+on:
+  push:
+    branches:
+      - "testing"
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Premake
+        run: bash ${PWD}/scripts/build.sh
+
+      - name: Run
+        run: ${PWD}/bin/linux-x86_64/Debug/TestBed/TestBed
