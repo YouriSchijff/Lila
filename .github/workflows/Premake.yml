@@ -1,0 +1,24 @@
+name: Premake
+
+on:
+  push:
+    branches: [ "testing" ]
+  pull_request:
+    branches: [ "testing" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download Premake
+      uses: BEASTSM96/premake-action@v1.3.1
+
+    - name: premake
+      run: premake5 gmake2
+    
+    - name: make
+      run: make
