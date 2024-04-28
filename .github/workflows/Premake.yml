@@ -55,8 +55,5 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=Headless .
 
-    - name: Test
-      run: dir C:/a/Lila/Lila/bin
-    
     - name: Run
-      run: start bin/windows-x86_64/Debug/Testbed/Testbed.exe
+      run: start ../bin/windows-x86_64/Headless/Testbed/Testbed.exe
