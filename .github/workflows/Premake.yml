@@ -56,4 +56,4 @@ jobs:
       run: msbuild /m /p:Configuration=Headless .
 
     - name: Run
-      run: "${PWD}bin\\windows-x86_64\\Debug\\Testbed\\Testbed.exe"
+      run: \"bin\\windows-x86_64\\Debug\\Testbed\\Testbed.exe\"
