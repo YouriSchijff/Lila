@@ -56,10 +56,7 @@ jobs:
       run: msbuild /m /p:Configuration=Headless .
 
     - name: Test
-      run: dir
-
-    - name: Search
-      run: Get-ChildItem -Path C:\ -Include Testbed.exe -File -Recurse -ErrorAction SilentlyContinue
+      run: dir C:/a/Lila/Lila/bin
     
     - name: Run
       run: start bin/windows-x86_64/Debug/Testbed/Testbed.exe
