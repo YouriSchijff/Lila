@@ -71,5 +71,5 @@ jobs:
       - run: ls
       
       - name: Run
-        run: bin/linux-x86_64/Headless/Testbed/Testbed
+        run: linux-x86_64/Headless/Testbed/Testbed
         
