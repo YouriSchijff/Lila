@@ -67,6 +67,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: Lila-binary
+          path: .
       
       - name: Run
         run: bin/linux-x86_64/Headless/Testbed/Testbed
