@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
     
     - name: Download Premake
       uses: BEASTSM96/premake-action@v1.3.1
