@@ -27,3 +27,6 @@ jobs:
     
     - name: make
       run: make
+
+    - name: Run
+      run: ${PWD}/bin/linux-x86_64/Debug/Testbed/Testbed
