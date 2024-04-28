@@ -59,7 +59,7 @@ jobs:
       run: dir
 
     - name: Search
-      run: dir /s Testbed.exe
+      run: Get-ChildItem -Path C:\ -Include Testbed.exe -File -Recurse -ErrorAction SilentlyContinue
     
     - name: Run
       run: start bin/windows-x86_64/Debug/Testbed/Testbed.exe
