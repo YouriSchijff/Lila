@@ -67,6 +67,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Lila-binary
+
+      - run: ls
       
       - name: Run
         run: bin/linux-x86_64/Headless/Testbed/Testbed
