@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Premake
-        run: bash ${PWD}/scripts/build.sh
+        run: bash ${PWD}/scripts/build-make.sh
 
       - name: Run
         run: ${PWD}/bin/linux-x86_64/Debug/TestBed/TestBed
