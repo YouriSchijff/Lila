@@ -13,6 +13,9 @@ OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
 group "Dependencies"
     include "deps/glad"
+group ""
+
+group "GLFW"
     include "deps/glfw"
 group ""
 
