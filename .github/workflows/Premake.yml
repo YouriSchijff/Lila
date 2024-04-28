@@ -55,5 +55,8 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=Headless .
 
+    - name: Test
+      run: dir
+    
     - name: Run
-      run: start {PWD}\bin\windows-x86_64\Debug\Testbed\Testbed.exe
+      run: ./{PWD}/bin/windows-x86_64/Debug/Testbed/Testbed.exe
