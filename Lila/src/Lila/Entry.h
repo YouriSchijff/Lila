@@ -30,10 +30,10 @@
 // Mac OS
 #define LILA_PLATFORM_MACOS 1
 #else
-#error "Unkown Apple platform"
+#error "Unknown Apple platform"
 #endif
 #else
-#error "Unkown platform"
+#error "Unknown platform"
 #endif
 
 extern Lila::Shared<Lila::Application> createApplication();

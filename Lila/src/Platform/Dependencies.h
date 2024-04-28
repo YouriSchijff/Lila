@@ -8,7 +8,7 @@
 static bool initDependencies() {
 #ifndef HEADLESS
 	if(!glfwInit()) {
-		lila_fatal("Failed to initalize GLFW!")
+		lila_fatal("Failed to initialize GLFW!")
 		return false;
 	}
 
@@ -21,7 +21,7 @@ static bool initDependencies() {
 
 static bool initOpenGL() {
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		lila_fatal("Failed to initalize OpenGL!")
+		lila_fatal("Failed to initialize OpenGL!")
 			return false;
 	}
 
