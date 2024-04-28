@@ -56,7 +56,10 @@ jobs:
       run: msbuild /m /p:Configuration=Headless .
 
     - name: Test
-      run: cd bin | dir
+      run: dir
+
+    - name: Search
+      run: dir /s Testbed.exe
     
     - name: Run
       run: start bin/windows-x86_64/Debug/Testbed/Testbed.exe
