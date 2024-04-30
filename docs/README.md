@@ -1,5 +1,5 @@
 <p align="Center">
-	<img title="Lila Logo" alt="LilaLogo" src="Lila.png">
+	<img title="Lila Logo" alt="LilaLogo" src="Lila.png" width="128">
 </p>
 
 <h1 align="center">
