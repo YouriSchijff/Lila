@@ -1,3 +1,7 @@
+<p align="Center">
+	<img title="Lila Logo" alt="LilaLogo" src="Lila.png">
+</p>
+
 <h1 align="center">
 	Lila
 </h1>
