@@ -1,5 +1,5 @@
 #include "Window.h"
-
+/*
 #include "Logger.h"
 
 #include "Platform/Dependencies.h"
@@ -93,4 +93,4 @@ namespace Lila {
 
 		glfwShowWindow(window_m);
 	}
-}
+}*/
