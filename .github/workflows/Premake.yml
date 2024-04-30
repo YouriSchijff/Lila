@@ -70,7 +70,9 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: 'recursive'
-
+        
+    - run: brew install llvm
+    
     - name: Downloading Premake
       run: brew install premake
 
