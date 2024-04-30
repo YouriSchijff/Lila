@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Lila/Math/Math.h"
+/*#include "Lila/Math/Math.h"
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
@@ -36,3 +36,4 @@ namespace Lila {
 		const GLFWvidmode* videoMode_m;
 	};
 }
+*/
