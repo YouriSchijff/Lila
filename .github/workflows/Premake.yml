@@ -78,8 +78,13 @@ jobs:
       run: premake5 xcode4
 
     - name: Build using xcode
-      run: xcodebuild -configuration Headless
-  
+      uses: sersoft-gmbh/xcodebuild-action@v3.2.0
+      with:
+        workspace: Lila.xcworkspace
+        scheme: Lila
+        destination: platform=macOS
+        action: build
+      
   test-linux:
     runs-on: ubuntu-latest
     needs: build-linux
