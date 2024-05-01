@@ -11,6 +11,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v4
+          
+          - name: Upload coverage reports to Codecov
+            uses: codecov/codecov-action@v4.0.1
+            with:
+              token: ${{ secrets.CODECOV_TOKEN }}
           - uses: cpp-linter/cpp-linter-action@v2
             id: linter
             env:
