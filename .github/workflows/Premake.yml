@@ -50,6 +50,7 @@ jobs:
         ls
         cd Testbed
         ls
+        ./Testbed
         
   build-windows:
     runs-on: windows-latest
@@ -93,7 +94,4 @@ jobs:
     
     - name: Build using Make
       run: make config=headless
-      
-    - name: Run
-      run: ../bin/linux-x86_64/Headless/Testbed
       
