@@ -64,29 +64,6 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=Headless .
 
-  build-macos:
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: 'recursive'
-        
-    - run: brew install llvm
-    
-    - name: Downloading Premake
-      run: brew install premake
-
-    - name: Using Premake
-      run: premake5 xcode4
-
-    - name: Build using xcode
-      uses: sersoft-gmbh/xcodebuild-action@v3.2.0
-      with:
-        workspace: Lila.xcworkspace
-        scheme: Lila
-        destination: platform=macOS
-        action: build
-      
   test-linux:
     runs-on: ubuntu-latest
     needs: build-linux
