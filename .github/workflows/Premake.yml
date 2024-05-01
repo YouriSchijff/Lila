@@ -39,7 +39,17 @@ jobs:
     
     - name: Build using Make
       run: make config=headless
-        
+
+    - run: |
+        ls
+        cd bin
+        ls
+        cd linux-x86_64
+        ls
+        cd Headless
+        ls
+        cd Testbed
+        ls
         
   build-windows:
     runs-on: windows-latest
@@ -85,5 +95,5 @@ jobs:
       run: make config=headless
       
     - name: Run
-      run: linux-x86_64/Headless/Testbed/Testbed
-        
+      run: ../bin/linux-x86_64/Headless/Testbed
+      
