@@ -41,7 +41,7 @@ public:
         char* ss = "Hello";
         
         char buf[24];
-        strcpy(buf, ss);
+        strcpy(buf, ss); // Chit mn i ruinid the commit 69. I. Didn't known that you are idk
     }
 
 
