@@ -1,6 +1,8 @@
 #define Entry
 #include <Lila/Lila.h>
 
+#include <iostream>
+
 class TestEvent : public Lila::Event {};
 class TestHandler : public Lila::EventHandler {
 public:
@@ -27,6 +29,19 @@ public:
 
         TestEvent testEvent;
         Lila::EventBus::fireEvent(testEvent);
+
+        int value = 10;
+        
+        if (value=100) {
+            printf("Value is valid\n");
+            return;
+        }
+        printf("Value is not valid\n");
+
+        char* ss = "Hello";
+        
+        char buf[24];
+        strcpy(buf, ss);
     }
 
 
