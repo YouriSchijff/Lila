@@ -106,4 +106,7 @@ jobs:
     
     - name: Build using Make
       run: make config=headless
+      
+    - name: Run
+      run: linux-x86_64/Headless/Testbed/Testbed
         
