@@ -22,6 +22,12 @@ public:
     void run() override {
         lila_info("Running Testbed");
 
+        char* f = new char();        
+
+        delete f;
+
+        lila_debug("%s", f)
+
         TestHandler testHandler;
         Lila::EventBus::addHandler(testHandler);
 
