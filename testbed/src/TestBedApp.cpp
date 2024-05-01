@@ -20,6 +20,11 @@ public:
     }
 
     void run() override {
+        char* f = new char();
+        delete f;
+
+        lila_info("%s", f);
+        
         lila_info("Running Testbed");
 
         TestHandler testHandler;
