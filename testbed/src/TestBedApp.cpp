@@ -27,6 +27,15 @@ public:
 
         TestEvent testEvent;
         Lila::EventBus::fireEvent(testEvent);
+
+        int value = 3;
+        
+        if (value=100) {
+            printf("Value is valid\n");
+            return(1);
+        }
+        printf("Value is not valid\n");
+        return(0);
     }
 
 
