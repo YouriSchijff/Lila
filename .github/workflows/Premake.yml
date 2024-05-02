@@ -38,8 +38,8 @@ jobs:
       run: premake5 gmake2
     
     - name: Build using Make
-      run: make config=headless
-        
+      run: make config=headless ccx="clang++ -lm -coverage -g"
+      
   build-windows:
     runs-on: windows-latest
     needs: static-tests
