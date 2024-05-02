@@ -10,20 +10,43 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v4
-
-          - name: Create Coverage
-            run: |
-                cd testbed
-                cd src
-                g++ --coverage TestBedApp.cpp -o test
-                ./test
-                gcov -o . TestBedApp.cpp
+        - uses: actions/checkout@v4
+          with:
+            submodules: 'recursive'
+        
+        - name: Downloading X11
+          run: sudo apt install xorg-dev
+        
+        - name: Downloading Premake
+          uses: BEASTSM96/premake-action@v1.3.1
+        
+        - name: Using Premake
+          run: premake5 gmake2
+        
+        - name: Build using Make
+          run: make config=headless ccx="g++ --coverage"
+        
+        - name: Create Coverage
+          run: |
+            cd bin
+            cd linux-x86_64
+            cd Headless
+            cd Testbed
+            ./Testbed
+            cd ../../../../
+            cd testbed
+            cd src
+            gcov -o . TestBedApp.cpp
             
-          - name: Upload coverage reports to Codecov
-            uses: codecov/codecov-action@v4.0.1
-            with:
-              token: ${{ secrets.CODECOV_TOKEN }}
+        - name: Upload coverage reports to Codecov
+          uses: codecov/codecov-action@v4.0.1
+          with:
+            token: ${{ secrets.CODECOV_TOKEN }}
+
+    cpp-linter:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
           - uses: cpp-linter/cpp-linter-action@v2
             id: linter
             env:
