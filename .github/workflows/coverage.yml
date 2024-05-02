@@ -11,7 +11,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v4
-          
+
+          - name: Create Coverage
+            run: |
+                cd testbed
+                g++ --coverage TestBedApp.cpp -o test
+                ./test
+                gcov -o . TestBedApp.cpp
+            
           - name: Upload coverage reports to Codecov
             uses: codecov/codecov-action@v4.0.1
             with:
