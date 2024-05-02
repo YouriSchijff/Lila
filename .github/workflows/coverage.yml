@@ -15,6 +15,7 @@ jobs:
           - name: Create Coverage
             run: |
                 cd testbed
+                cd src
                 g++ --coverage TestBedApp.cpp -o test
                 ./test
                 gcov -o . TestBedApp.cpp
