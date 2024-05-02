@@ -33,10 +33,7 @@ jobs:
             cd Headless
             cd Testbed
             ./Testbed
-            cd ../../../../
-            cd testbed
-            cd src
-            gcov -o . TestBedApp.cpp
+            gcov -o . ../../../../testbed/srcTestBedApp.cpp
             
         - name: Upload coverage reports to Codecov
           uses: codecov/codecov-action@v4.0.1
