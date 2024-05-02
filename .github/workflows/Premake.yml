@@ -29,7 +29,7 @@ jobs:
         submodules: 'recursive'
 
     - name: Downloading X11
-      run: sudo apt install xorg-dev
+      run: sudo apt install xorg-dev clang-3.5
 
     - name: Downloading Premake
       uses: BEASTSM96/premake-action@v1.3.1
