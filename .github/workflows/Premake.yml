@@ -81,8 +81,10 @@ jobs:
   
       - name: Build using xcode
         run: |
+          cd Lila
           ls
-          xcodebuild -scheme macOS build -workspace Lila.xcworkspace -project Lila.xcodeproj
+          cd ..
+          xcodebuild -scheme macOS build -workspace Lila.xcworkspace
     
   test-linux:
     runs-on: ubuntu-latest
