@@ -80,7 +80,9 @@ jobs:
         run: premake5 xcode4
   
       - name: Build using xcode
-        run: xcodebuild -scheme macOS build -project Lila.xcworkspace
+        run: |
+          ls
+          xcodebuild -scheme macOS build -workspace Lila.xcworkspace -project Lila.xcodeproj
     
   test-linux:
     runs-on: ubuntu-latest
