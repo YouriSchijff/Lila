@@ -1,4 +1,4 @@
-name: Premake
+name: Building
 
 on:
   push:
@@ -62,26 +62,6 @@ jobs:
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=Headless .
-
-  build-macos:
-      runs-on: macos-latest
-      needs: static-tests
-      steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: 'recursive'
-          
-      - run: brew install llvm
-      
-      - name: Downloading Premake
-        run: brew install premake
-  
-      - name: Using Premake
-        run: premake5 xcode4
-  
-      - name: Build using xcode
-        run: |
-          xcodebuild -scheme Lila build -workspace Lila.xcworkspace
     
   test-linux:
     runs-on: ubuntu-latest
@@ -105,10 +85,7 @@ jobs:
 
     - name: Run
       run: |
-        cd bin
-        cd linux-x86_64
-        cd Headless
-        cd Testbed
+        cd bin/linux-x86_64/Headless/Testbed
         ./Testbed
         cd ../../../../
       
