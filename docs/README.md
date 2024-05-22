@@ -1,12 +1,6 @@
-<p align="Center">
-	<img title="Lila Logo" alt="LilaLogo" src="Lila.png" width="128">
-</p>
-
-<h1 align="center">
-	Lila
-</h1>
-
 <p align="center">
+	<img src="https://gi" />
+	<br>
 	<a title="License MIT" href="https://github.com/compvisia/Lila/blob/master/LICENSE"><img src="https://img.shields.io/github/license/compvisia/lila"/></a>
 </p>
 
@@ -16,29 +10,32 @@ We tried to make Lila as easy to read as possible, while still being some what o
 
 Documentation will be added in the future.
 
-## Information
+## ⚙️ Installation
 
 ### Cloning
 
-To clone this repository run this command:
-```terminal
-git clone git@github.com:compvisia/Lila.git --recursive
-```
+Clone this repository using the `--recursive` parameter
 
 ### Building
 
 See [Building.md](https://github.com/compvisia/Lila/blob/master/docs/Building.md)
 
-### Dependencies
-
-See [Dependencies.md](https://github.com/compvisia/Lila/blob/master/docs/Dependencies.md)
+## Information
 
 ### Platform support
 
 Windows and Linux are supported. more will be supported down the road.
 
-## Contribution
+### Dependencies
+
+See [Dependencies.md](https://github.com/compvisia/Lila/blob/master/docs/Dependencies.md)
+
+## 💻 Contribution
 
 You can contribute via the Pull Requests.
 
 Code must match the style of the current code in this repository. A coding style guide will be made available at some point.
+
+## 📜 License
+
+Lila is free and open-source software under the [MIT License](https://github.com/compvisia/Lila/blob/master/LICENSE). This project is also under the @compvisia family
