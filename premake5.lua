@@ -7,7 +7,7 @@ workspace "Lila"
     architecture "x64"
     startproject "Testbed"
 
-    configurations { "Debug", "Release" }
+    configurations { "Debug", "Release", "Headless" }
     
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
@@ -16,7 +16,5 @@ group "Dependencies"
     include "deps/glfw"
 group ""
 
-group "Lila engine"
-    include "Lila/build.lua"
-    include "testbed/build.lua"
-group ""
+include "Lila/build.lua"
+include "testbed/build.lua"

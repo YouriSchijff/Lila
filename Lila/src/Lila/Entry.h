@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "Platform/Defines.h"
 #include "Platform/Dependencies.h"
 

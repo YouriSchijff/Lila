@@ -1,0 +1,91 @@
+name: Building
+
+on:
+  push:
+    branches: [ "testing" ]
+  pull_request:
+    branches: [ "testing" ]
+
+jobs:
+  static-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+        
+      - name: Spell Check
+        uses: codespell-project/actions-codespell@v2
+        with:
+          skip: ./bin,./deps,*.txt,*.yml.*.json,*.toml,*.ini,*.xml
+          check_filenames: true
+
+  build-linux:
+    runs-on: ubuntu-latest
+    needs: static-tests
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+
+    - name: Downloading X11
+      run: sudo apt install xorg-dev
+
+    - name: Downloading Premake
+      uses: BEASTSM96/premake-action@v1.3.1
+
+    - name: Using Premake
+      run: premake5 gmake2
+    
+    - name: Build using Make
+      run: make config=headless
+      
+  build-windows:
+    runs-on: windows-latest
+    needs: static-tests
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+        
+    - name: Configure MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+      
+    - name: Downloading Premake
+      uses: BEASTSM96/premake-action@v1.3.1
+
+    - name: Using Premake
+      run: premake5 vs2022
+    
+    - name: Build using MSBuild
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      # Add additional options to the MSBuild command line here (like platform or verbosity level).
+      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
+      run: msbuild /m /p:Configuration=Headless .
+    
+  test-linux:
+    runs-on: ubuntu-latest
+    needs: build-linux
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+
+    - name: Downloading X11
+      run: sudo apt install xorg-dev
+
+    - name: Downloading Premake
+      uses: BEASTSM96/premake-action@v1.3.1
+
+    - name: Using Premake
+      run: premake5 gmake2
+    
+    - name: Build using Make
+      run: make config=headless
+
+    - name: Run
+      run: |
+        cd bin/linux-x86_64/Headless/Testbed
+        ./Testbed
+        cd ../../../../
+      

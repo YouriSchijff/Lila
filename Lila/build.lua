@@ -30,6 +30,11 @@ project "Lila"
             "pthread"
         }
 
+   filter "configurations:Headless"
+      defines { "HEADLESS", "DEBUG" }
+      runtime "Debug"
+      symbols "On"
+
    filter "configurations:Debug"
        defines { "DEBUG" }
        runtime "Debug"
