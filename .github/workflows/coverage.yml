@@ -33,7 +33,7 @@ jobs:
             cd Debug
             cd Testbed
             ./Testbed
-            gcov -o . ../../../../testbed/src/TestBedApp.cpp
+            gcov ../../../../testbed/src/TestBedApp.cpp
             
         - name: Upload coverage reports to Codecov
           uses: codecov/codecov-action@v4.0.1
