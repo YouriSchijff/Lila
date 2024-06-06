@@ -30,7 +30,7 @@ jobs:
           run: |
             cd bin
             cd linux-x86_64
-            cd Headless
+            cd Debug
             cd Testbed
             ./Testbed
             gcov -o . ../../../../testbed/srcTestBedApp.cpp
