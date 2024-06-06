@@ -34,7 +34,7 @@ jobs:
             cd Testbed
             ./Testbed
             cd ../../../obj/linux-x86_64/Debug/Testbed/
-            gcov -m TestbedApp.gcda
+            gcov -m TestbedApp.gcno
             
         - name: Upload coverage reports to Codecov
           uses: codecov/codecov-action@v4.0.1
