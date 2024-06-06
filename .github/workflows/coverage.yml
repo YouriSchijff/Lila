@@ -33,7 +33,8 @@ jobs:
             cd Debug
             cd Testbed
             ./Testbed
-            gcov -o . -m .
+            cd ../../../obj/linux-x86_64/Debug/Testbed/
+            gcov -m TestbedApp.gcda
             
         - name: Upload coverage reports to Codecov
           uses: codecov/codecov-action@v4.0.1
