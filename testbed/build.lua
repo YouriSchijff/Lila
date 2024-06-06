@@ -15,9 +15,7 @@ project "Testbed"
    }
 
    links {
-        "Lila",
-        "glad",
-        "glfw"
+        "Lila"
    }
 
    if _OPTIONS["coverage"] then
