@@ -16,8 +16,6 @@ project "Testbed"
 
    links {
         "Lila",
-        "glad",
-        "glfw"
    }
 
    targetdir ("../bin/" .. OutputDir .. "/%{prj.name}")
