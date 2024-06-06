@@ -15,6 +15,4 @@
 
 #include "Lila/Events/EventBus.h"
 
-#include "Lila/Core/Window.h"
-
 #include "Lila/Entry.h"
