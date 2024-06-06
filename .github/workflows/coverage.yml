@@ -24,7 +24,7 @@ jobs:
           run: premake5 gmake2 --coverage
         
         - name: Build using Make
-          run: make config=headless
+          run: make
         
         - name: Create Coverage
           run: |
